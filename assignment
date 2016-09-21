@@ -1,7 +1,32 @@
 1. dart语言特性中的循环语句定义和操作方法
 
 2. dart字符串的定义和操作方法
-
+(1).直接定义  var s1 = 'Single quotes work well for string literals.';
+            var s2 = "Double quotes work just as well.";
+2.也可以利用${expression}插入到，前提是expression是个标识符
+           var s = 'string interpolation';
+           assert('Dart has $s, which is very handy.' ==  'Dart has string interpolation, ' + 'which is very handy.');
+(3).可以通过邻近的字符串或"+"链接字符串  
+           var s1 = 'String ' 'concatenation'  " works even over line breaks.";
+           assert(s1 == 'String concatenation works even over '  'line breaks.');
+           var s2 = 'The + operator '   + 'works, as well.';
+           assert(s2 == 'The + operator works, as well.');
+(4).另一个创造多行的字符串可以采用多次引用单个标记符
+          var s1 = '''
+          You can create
+          multi-line strings like this one.
+          ''';
+(5).You can create a “raw” string by prefixing it with r:
+          var s = r"In a raw string, even \n isn't special.";
+(6).// These work in a const string.
+          const aConstNum = 0;
+          const aConstBool = true;
+          const aConstString = 'a constant string';
+(7).//These do NOT work in a const string.
+          var aNum = 0;
+          var aBool = true;
+          var aString = 'a string';
+          const aConstList = const [1, 2, 3];
 3. dart函数定义和使用方法
 
 4. dart中数组定义和使用方法
