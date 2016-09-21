@@ -28,7 +28,14 @@
           var aString = 'a string';
           const aConstList = const [1, 2, 3];
 3. dart函数定义和使用方法
-
+  一个简单的能够运行的函数: bool isNoble(int atomicNumber) {
+                                  return _nobleGases[atomicNumber] != null;
+                                                   }//参数比较齐全，以及确定类型
+                              isNoble(atomicNumber) {
+                                    return _nobleGases[atomicNumber] != null;
+                                     }//缺少类型bool
+                               bool isNoble(int atomicNumber) => _nobleGases[atomicNumber] != null;//速成语句
+            
 4. dart中数组定义和使用方法
 list also knowed arrays;定义方法和c语言或是javascript一样，性质也是类似的
          var list = [1, 2, 3];
