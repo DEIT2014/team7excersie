@@ -30,7 +30,11 @@
 3. dart函数定义和使用方法
 
 4. dart中数组定义和使用方法
-
+list also knowed arrays;定义方法和c语言或是javascript一样，性质也是类似的
+         var list = [1, 2, 3];
+         assert(list.length == 3);
+         assert(list[1] == 2);
+         var constantList = const [1, 2, 3];
 5.dart中列表定义和使用方法
 
 6.dart中 Map定义和使用方法
