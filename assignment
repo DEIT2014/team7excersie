@@ -49,9 +49,26 @@ list also knowed arrays;定义方法和c语言或是javascript一样，性质也
          assert(list[1] == 2);
          var constantList = const [1, 2, 3];
 5.dart中列表定义和使用方法
+数组
+在Dart中数组也叫列表list.
+var gifts = {                      
+// Keys       Values
+  "first"  : "partridge",
+  "second" : "turtledoves",
+  "fifth"  : "golden rings"};
+
+gifts["third"] = "apple"; //添加一个
 
 6.dart中 Map定义和使用方法
 
+map表示一种映射，Map 的字面量语法要求 key 必须字符串，但如果是用构造函数创建的，则任何对象都可以是 key。
+var map = {
+  'one': 1,
+  'two': 2
+}; // 或者 new Map(); 
+assert(map['one'] == 1);
+map['four'] = 4;
+assert(map.length == 3);
 7. querySelector（）函数的详细API解释
 @return Element
 @param string 
@@ -80,5 +97,9 @@ Element querySelector(String selectors) => document.querySelector(selectors);
 10. dart可用的各种工具的解释部分
 
 11. 指引你到其他社区社区寻求dart相关问题帮助的解释部分
+CDSN,ITeye,脚本之家，开源中国社区
 
 12. 从web storm软件菜单找出webstrom 中dart开发的帮助文档
+https://www.jetbrains.com/help/webstorm/2016.2/dart-support.html?search=dart
+https://www.jetbrains.com/help/webstorm/2016.2/dart.html?search=dart
+https://www.jetbrains.com/help/webstorm/2016.2/testing-dart.html?search=dart
