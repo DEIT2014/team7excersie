@@ -1,5 +1,11 @@
 1. dart语言特性中的循环语句定义和操作方法
-
+        main() {  var callbacks = []; 
+                  for (var i = 0; i < 2; i++) {  
+                         callbacks.add(() => print(i)); 
+                         }
+                   callbacks.forEach((c) => c());  
+                }//while和do while循环与javascript中一样，break,continue中也一样。
+                  //switch使用==来判断对象是否相等。
 2. dart字符串的定义和操作方法
 (1).直接定义  var s1 = 'Single quotes work well for string literals.';
             var s2 = "Double quotes work just as well.";
