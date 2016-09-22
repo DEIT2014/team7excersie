@@ -53,7 +53,26 @@ list also knowed arrays;定义方法和c语言或是javascript一样，性质也
 6.dart中 Map定义和使用方法
 
 7. querySelector（）函数的详细API解释
+@return Element
+@param string 
 
+Element querySelector(String selectors)
+
+寻找"第一个"符合selector条件的文档的子级元素<
+
+
+除非你在多文档环境下(可能指的是网页中有frame元素吧),否则顶层的querySelector方法与这个方法的表现使用是一样的,所以代替的你应该使用这个方法来节约一些字符。
+
+selector应当是一个使用css查询语法的字符串
+
+	var element1 = document.querySelector('.className');
+	var element2 = document.querySelector('#id');
+
+Source:
+Element querySelector(String selectors) => document.querySelector(selectors);
+
+其实dart的querySelector方法的结果来源是调用了浏览器提供的api
+   
 8. 详细解释dart如何操作html的文档
 
 9. dart web app 应用程序组织结构的解释部分
