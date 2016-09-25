@@ -51,6 +51,7 @@ list also knowed arrays;定义方法和c语言或是javascript一样，性质也
 5.dart中列表定义和使用方法
 数组
 在Dart中数组也叫列表list.
+下面是一个例子：
 var gifts = {                      
 // Keys       Values
   "first"  : "partridge",
@@ -97,9 +98,10 @@ Element querySelector(String selectors) => document.querySelector(selectors);
 10. dart可用的各种工具的解释部分
 
 11. 指引你到其他社区社区寻求dart相关问题帮助的解释部分
-CDSN,ITeye,脚本之家，开源中国社区
+在dart语言的官网上的Community and Support，可以找到很多帮助。除此之外，CDSN,ITeye,脚本之家，开源中国社区也有很多关于dart的专业帮助。
 
 12. 从web storm软件菜单找出webstrom 中dart开发的帮助文档
+打开webstorm，直接按f1，然后搜索dart，可以找到很多dart的开发知识。
 https://www.jetbrains.com/help/webstorm/2016.2/dart-support.html?search=dart
 https://www.jetbrains.com/help/webstorm/2016.2/dart.html?search=dart
 https://www.jetbrains.com/help/webstorm/2016.2/testing-dart.html?search=dart
