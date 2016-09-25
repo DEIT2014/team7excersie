@@ -231,9 +231,11 @@ input.onClick.listen((e){
 
 ##11. 指引你到其他社区社区寻求dart相关问题帮助的解释部分
 
-在**dart**语言的官网上的Community and Support（https://www.dartlang.org/community）可以找到很多帮助。除此之外，CDSN,ITeye,脚本之家，开源中国社区也有很多关于dart的专业帮助。
+在**dart**语言的官网上的**Community**中的 
+###Communityand Support（https://www.dartlang.org/community）
+可以找到很多帮助。除此之外，CDSN,ITeye,脚本之家，开源中国社区也有很多关于dart的专业帮助。
 
-12. 从web storm软件菜单找出webstrom 中dart开发的帮助文档
+##12. 从web storm软件菜单找出webstrom 中dart开发的帮助文档
 
 打开webstorm，直接按f1，然后搜索dart，可以找到很多dart的开发知识。 
 （https://www.jetbrains.com/help/webstorm/2016.2/dart-support.html?search=dart ）
