@@ -61,7 +61,9 @@ list also knowed arrays;定义方法和c语言或是javascript一样，性质也
          assert(list.length == 3);
          assert(list[1] == 2);
          var constantList = const [1, 2, 3];
-###5.dart中列表定义和使用方法
+##5.dart中列表定义和使用方法
+
+###列表的定义
 
 数组在Dart中数组也叫列表**list**.
 
@@ -78,7 +80,7 @@ assert(list[1] == 2);
 list[1] = 1;
 assert(list[1] == 1);
 ```
-一些对列表的操作方式
+###列表的使用方法
 ```
 var gifts = {                      
 // Keys       Values
@@ -89,7 +91,9 @@ var gifts = {
 gifts["third"] = "apple"; //添加一个元素
 ```
 
-###6.dart中 Map定义和使用方法
+##6.dart中 Map定义和使用方法
+
+###map的定义
 
 **map**表示一种映射，是“键”和“值”之间的联系。**map** 的字面量语法要求 key 是必须字符串，但如果是用构造函数创建的，则任何对象都可以是 key。
 下面是一个案例：
@@ -102,7 +106,8 @@ assert(map['one'] == 1);
 map['four'] = 4;
 assert(map.length == 3);
 ```
-也可以通过地图建造器制作同样的对象
+###map的一些操作
+
 ```
 var gifts = new Map();
 gifts['first'] = 'partridge';
