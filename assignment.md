@@ -119,113 +119,115 @@ nobleGases[2] = 'helium';
 nobleGases[10] = 'neon';
 nobleGases[18] = 'argon';
 ```
-7. querySelector（）函数的详细API解释
+##7. querySelector（）函数的详细API解释
 
-Element querySelector(String selectors) 
+``` Element querySelector(String selectors) ```
 该函数的作用是寻找第一个符合selectors的当前document文档的子级元素
 
-Selectors的写法
-
+###Selectors的写法
 querySelector方法的参数selectors是一个css查询字符串，也就是类似于jquery的查询字符串
-
- var element1 = document.querySelector('.className');
+``` 
+var element1 = document.querySelector('.className');
 //获取第一个class属性为className的元素
- var element2 = document.querySelector('#id'); 
- //获取第一个id属性叫做id的元素
+var element2 = document.querySelector('#id'); 
+//获取第一个id属性叫做id的元素
 var lioful = document.querySelector("ul li");
- //获取第一个ul元素下的第一个li元素
- //如果想要获得所有li元素可以调用querySelectorAll方法
- var lisoful = querySelectorAll("ul li");
- //返回的是一个ElementList对象，用法类似于HashMap
+//获取第一个ul元素下的第一个li元素
+//如果想要获得所有li元素可以调用querySelectorAll方法
+var lisoful = querySelectorAll("ul li");
+//返回的是一个ElementList对象，用法类似于HashMap
+```
 在只有一个document文档的前提下，直接调用querySelector函数相当于使用document.querySelector
 
-8. 详细解释dart如何操作html的文档
 
-本页内容来自于Element类
 
-1.获取DOM元素的方法:
+##8. 详细解释dart如何操作html的文档
+<small>本页内容来自于<a href="https://api.dartlang.org/stable/1.19.1/dart-html/Element-class.html">Element类</a></small>
+###1.获取DOM元素的方法:
+>__querySelector__: 获取符合查询条件的第一个DOM对象<br />
+>__querySelectorAll__: 获取所有符合查询条件的DOM对象
 
-querySelector: 获取符合查询条件的第一个DOM对象
+###2.操作DOM元素属性与样式
+####Element类有一个attributes属性和setAttribute方法
+>attributes → Map < String,  String \>
+>All attributes on this element.   \( *read / write* \)
 
-querySelectorAll: 获取所有符合查询条件的DOM对象
-2.操作DOM元素属性与样式
+**比如说获取一个input元素的value** <br />
+    ```var val = querySelector("input").attributes["value"];```
 
-Element类有一个attributes属性和setAttribute方法
-
-attributes → Map < String, String > 
-All attributes on this element. ( read / write ) 
-比如说获取一个input元素的value 
- var val = querySelector("input").attributes["value"];
 当然element自己也有许多属性去获得该元素的信息
 
-比如说获得body元素可视区域的宽度 
+**比如说获得body元素可视区域的宽度** <br />
+```var width = querySelector("body").clientWidth;```
 
-var width = querySelector("body").clientWidth;
+####获取元素实际的样式
+>getComputedStyle([String pseudoElement ]) 
+@return CssStyleDeclaration
+<small>我们得到的是CssStyleDeclaration对象，需要在调用CssStyleDeclaration方法才能获得css的值</small>
 
-获取元素实际的样式
+**比如说获取body元素的实际高度**
 
-getComputedStyle([String pseudoElement ]) 
-@return CssStyleDeclaration 
-我们得到的是CssStyleDeclaration对象，需要在调用CssStyleDeclaration方法才能获得css的值
-
-比如说获取body元素的实际高度
-querySelector("body").getComputedStyle().getPropertyValue("height");
+ ``` 
+ querySelector("body").getComputedStyle().getPropertyValue("height");
 //返回字符串的格式是680px 数值+单位 
-3.为元素绑定事件
+```
 
-在Element类中on开头的属性都是我们可以用来绑定事件的属性 
-例如以下的onclick属性
+###3.为元素绑定事件
 
-onClick → ElementStream 
-Stream of click events handled by this Element. 
-read-only
-我们为一个input元素绑定一个点击时内容变为success的事件
+在Element类中on开头的属性都是我们可以用来绑定事件的属性
 
-var input = querySelector("input");
+*例如以下的onclick属性*
+>onClick → ElementStream<MouseEvent>
+>Stream of click events handled by this Element.
+<small>read-only</small>
+
+**我们为一个input元素绑定一个点击时内容变为success的事件**
+
+``` var input = querySelector("input");
 input.onClick.listen((e){
-   input.setAttribute("value","success");
-     e.stopPropagation();
-  }); 
-onClick是一个ElementStream对象有一个listen方法来设置click事件的回调函数
+    input.setAttribute("value","success");
+    e.stopPropagation();
+  }); ```
 
-9. dart web app 应用程序组织结构的解释部分
-
-以下是dart web app项目目录结构
-
-+web 
- +packages 
- +dart 
- +style 
-  index.html
-web目录是整个web程序的根目录，index.html就是我们的入口文件，style目录中存放css样式文件，dart目录中存放的是dart文件，而packages目录中存放的是dart语言的libraries，比如说我们希望使用dart:html库，那么就是加载了packages目录下的该库文件。
-
-.packages文件描述了库与文件路径的对应关系
-
-10. dart可用的各种工具的解释部分
-
-#IDEs 
-dart语言的插件已经被许多常用的IDE （像webstorm等）所支持;
+<small>onClick是一个ElementStream对象有一个listen方法来设置click事件的回调函数</small>
 
 
-当然也可以为一些文本编辑器（像vim、sublimetext等）安装dart的插件
+##9. dart web app 应用程序组织结构的解释部分
+<small>以下是dart web app项目目录结构</small>
+>+web <br/>
+&emsp;+packages <br/> 
+&emsp;+dart <br/>
+&emsp;+style <br/>
+&emsp; index.html <br/>
 
-SDKs
+<p>web目录是整个web程序的根目录，index.html就是我们的入口文件，style目录中存放css样式文件，dart目录中存放的是dart文件，
+而packages目录中存放的是dart语言的libraries，比如说我们希望使用dart:html库，那么就是加载了packages目录下的该库文件。</p>
+<small>.packages文件描述了库与文件路径的对应关系</small>
 
-用途	sdk
-web app(移动端的web页面)、作为脚本或服务器	dart
-移动端原生app	Flutter
-命令行工具
 
-pub 包管理工具
-
-管理Dart的包，用于安装，使用和分享Dart库，支持Dart插件的IDEs对pub都有支持；
-静态分析器
-
+##10. dart可用的各种工具的解释部分
+###IDEs
+<p>dart语言的插件已经被许多常用的IDE （像webstorm等）所支持; </p>
+<p>当然也可以为一些文本编辑器（像vim、sublimetext等）安装dart的插件</p>
+###SDKs
+<table>
+<thead><tr><td>用途</td><td>sdk</td></tr></thead>
+<tbody><tr>
+<td>web app(移动端的web页面)、作为脚本或服务器</td>
+<td>dart</td>
+</tr><tr>
+<td>移动端原生app</td>
+<td>Flutter</td>
+</tr></tbody>
+</table>
+###命令行工具
+####pub 包管理工具
+>管理Dart的包，用于安装，使用和分享Dart库，支持Dart插件的IDEs对pub都有支持；
+####静态分析器
 运行并报告你的代码中的任何的错误和警告。你的IDE的这个Dart插件应当利用了Dart的解释引擎，但是你也自己在命令行中运行这个分析器
+####代码规范器
+规范你的代码格式，按照<a href="https://www.dartlang.org/guides/language/effective-dart/style">dart风格规范</a>的要求，你的IDE通常就会允许你来规范化你的代码风格。
 
-代码规范器
-
-规范你的代码格式，按照dart风格规范的要求，你的IDE通常就会允许你来规范化你的代码风格。
 
 11. 指引你到其他社区社区寻求dart相关问题帮助的解释部分
 
