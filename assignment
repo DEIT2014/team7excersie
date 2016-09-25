@@ -61,12 +61,12 @@ list also knowed arrays;定义方法和c语言或是javascript一样，性质也
          assert(list.length == 3);
          assert(list[1] == 2);
          var constantList = const [1, 2, 3];
-5.dart中列表定义和使用方法
+###5.dart中列表定义和使用方法
 
 数组在Dart中数组也叫列表list.
 
 下面是一个例子：
-
+、、、
 var gifts = {                      
 // Keys       Values
   "first"  : "partridge",
@@ -74,10 +74,12 @@ var gifts = {
   "fifth"  : "golden rings"};
 
 gifts["third"] = "apple"; //添加一个
-6.dart中 Map定义和使用方法
+、、、
+
+###6.dart中 Map定义和使用方法
 
 map表示一种映射，Map 的字面量语法要求 key 必须字符串，但如果是用构造函数创建的，则任何对象都可以是 key。
-
+、、、
 var map = {
   'one': 1,
   'two': 2
@@ -85,6 +87,7 @@ var map = {
 assert(map['one'] == 1);
 map['four'] = 4;
 assert(map.length == 3);
+、、、
 7. querySelector（）函数的详细API解释
 
 Element querySelector(String selectors) 
