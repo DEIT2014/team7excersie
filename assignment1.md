@@ -219,11 +219,15 @@ input.onClick.listen((e){
  运行并报告你的代码中的任何的错误和警告。你的IDE的这个Dart插件应当利用了Dart的解释引擎，但是你也自己在命令行中运行这个分析器
 ####代码规范器
  规范你的代码格式，按照<a href="https://www.dartlang.org/guides/language/effective-dart/style">dart风格规范</a>的要求，你的IDE通常就会允许你来规范化你的代码风格。
+ 
 ##11. 指引你到其他社区社区寻求dart相关问题帮助的解释部分
+
 在**dart**语言的官网上的**Community** 
-##Community and Support，可以找到很多帮助。除此之外，**CDSN**,**ITeye**,**脚本之家**，**开源中国社区**也有很多关于**dart**的专业帮助。
+
+Community and Support，可以找到很多帮助。除此之外，**CDSN**,**ITeye**,**脚本之家**，**开源中国社区**也有很多关于**dart**的专业帮助。
 
 ##12. 从web storm软件菜单找出webstrom 中dart开发的帮助文档
+
 打开**webstorm**，直接按f1，然后搜索**dart**，可以找到很多**dart**的开发知识。
 ###dart support
 https://www.jetbrains.com/help/webstorm/2016.2/dart-support.html?search=dart
