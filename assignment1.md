@@ -1,11 +1,109 @@
-##1. dart语言特性中的循环语句定义和操作方法     #####
-       main() {  var callbacks = []; 
-                  for (var i = 0; i < 2; i++) {  
-                         callbacks.add(() => print(i)); 
-                         }
-                   callbacks.forEach((c) => c());  
-                }//while和do while循环与javascript中一样，break,continue中也一样。
-                  //switch使用==来判断对象是否相等。
+##1. dart语言特性中的循环语句定义和操作方法    
+###FOR语句
+```
+main() {  var callbacks = []; 
+         for (var i = 0; i < 2; i++) {  
+              callbacks.add(() => print(i)); 
+            }
+         callbacks.forEach((c) => c());  
+        }
+```
+```
+for (var object in flybyObjects) {
+  print(object);
+}
+
+for (int month = 1; month <= 12; month++) {
+  print(month);
+}
+```
+###while和do while循环与javascript中一样，break,continue中也一样。
+```
+while (!isDone()) {
+  doSomething();
+}
+```
+```
+do {
+  printLine();
+} while (!atEndOfPage());
+```
+###IF判断语句
+```
+if (year >= 2001) {
+  print('21st century');
+} else if (year >= 1901) {
+  print('20th century');
+}
+```
+###break,continue语句
+####使用break中断循环
+```
+while (true) {
+  if (shutDownRequested()) break;
+  processIncomingRequests();
+}
+```
+####使用continue跳到下一个循环
+```
+for (int i = 0; i < candidates.length; i++) {
+  var candidate = candidates[i];
+  if (candidate.yearsExperience < 5) {
+    continue;
+  }
+  candidate.interview();
+}
+```
+###switch使用==来判断对象是否相等。
+```
+var command = 'OPEN';
+switch (command) {
+  case 'CLOSED':
+    executeClosed();
+    break;
+  case 'PENDING':
+    executePending();
+    break;
+  case 'APPROVED':
+    executeApproved();
+    break;
+  case 'DENIED':
+    executeDenied();
+    break;
+  case 'OPEN':
+    executeOpen();
+    break;
+  default:
+    executeUnknown();
+}
+```
+####也支持空CASE的字句
+```
+var command = 'CLOSED';
+switch (command) {
+  case 'CLOSED': // Empty case falls through.
+  case 'NOW_CLOSED':
+    // Runs for both CLOSED and NOW_CLOSED.
+    executeNowClosed();
+    break;
+}
+```
+####也支持continue陈述和标签
+```
+var command = 'CLOSED';
+switch (command) {
+  case 'CLOSED':
+    executeClosed();
+    continue nowClosed;
+    // Continues executing at the nowClosed label.
+
+nowClosed:
+  case 'NOW_CLOSED':
+    // Runs for both CLOSED and NOW_CLOSED.
+    executeNowClosed();
+    break;
+}
+```
 ##2. dart字符串的定义和操作方法
 ###(1).直接定义  var s1 = 'Single quotes work well for string literals.';
 ```
@@ -47,19 +145,30 @@ var s = r"In a raw string, even \n isn't special.";
           var aString = 'a string';
           const aConstList = const [1, 2, 3];
 ```
+###(8).其他类型的变量
+```
+var name = 'Voyager I';
+var year = 1977;
+var antennaDiameter = 3.7;
+var flybyObjects = ['Jupiter', 'Saturn', 'Uranus', 'Neptune'];
+var image = {
+  'tags': ['saturn'],
+  'url': '//path/to/saturn.jpg'
+};
+```
 ##3. dart函数定义和使用方法
 一个简单的能够运行的函数:
 ```
  bool isNoble(int atomicNumber) {
             return _nobleGases[atomicNumber] != null;
                                 }//参数比较齐全，以及确定类型
-            isNoble(atomicNumber) {
+ isNoble(atomicNumber) {
                   return _nobleGases[atomicNumber] != null;
                                 }//缺少类型bool
-bool isNoble(int atomicNumber) => _nobleGases[atomicNumber] != null;//速成语句
+ bool isNoble(int atomicNumber) => _nobleGases[atomicNumber] != null;//速成语句
 ```            
 ##4. dart中数组定义和使用方法
-####list also knowed arrays;定义方法和c语言或是javascript一样，性质也是类似的
+###list also knowed arrays;定义方法和c语言或是javascript一样，性质也是类似的
 ```        
          var list = [1, 2, 3];
          assert(list.length == 3);
