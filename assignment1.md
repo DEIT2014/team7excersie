@@ -67,8 +67,25 @@ bool isNoble(int atomicNumber) => _nobleGases[atomicNumber] != null;//速成语�
          var constantList = const [1, 2, 3];
 ```
 ##5.dart中列表定义和使用方法
-数组在Dart中数组也叫列表list.
-####下面是一个例子：
+
+###列表的定义
+
+数组在Dart中数组也叫列表**list**.
+
+下面是一个最简单的例子：
+```
+var list = [1, 2, 3];
+```
+列表使用从0开始索引的方式，0是第一个元素，列表长度-1是最后一个元素。
+```
+var list = [1, 2, 3];
+assert(list.length == 3);
+assert(list[1] == 2);
+
+list[1] = 1;
+assert(list[1] == 1);
+```
+###列表的使用方法
 ```
 var gifts = {                      
 // Keys       Values
@@ -76,19 +93,35 @@ var gifts = {
   "second" : "turtledoves",
   "fifth"  : "golden rings"};
 
-gifts["third"] = "apple"; //添加一个
+gifts["third"] = "apple"; //添加一个元素
 ```
+
 ##6.dart中 Map定义和使用方法
 
-#####map表示一种映射，Map 的字面量语法要求 key 必须字符串，但如果是用构造函数创建的，则任何对象都可以是 key。
+###map的定义
+
+**map**表示一种映射，是“键”和“值”之间的联系。**map** 的字面量语法要求 key 是必须字符串，但如果是用构造函数创建的，则任何对象都可以是 key。
+下面是一个案例：
 ```
 var map = {
   'one': 1,
-  'two': 2
-}; // 或者 new Map(); 
+  'two': 2}; 
+  // 或者 new Map(); 
 assert(map['one'] == 1);
 map['four'] = 4;
 assert(map.length == 3);
+```
+也可以通过地图建造器制作同样的对象
+```
+var gifts = new Map();
+gifts['first'] = 'partridge';
+gifts['second'] = 'turtledoves';
+gifts['fifth'] = 'golden rings';
+
+var nobleGases = new Map();
+nobleGases[2] = 'helium';
+nobleGases[10] = 'neon';
+nobleGases[18] = 'argon';
 ```
 ##7. querySelector（）函数的详细API解释
  ``` Element querySelector(String selectors) ```
@@ -187,10 +220,12 @@ input.onClick.listen((e){
 ####代码规范器
  规范你的代码格式，按照<a href="https://www.dartlang.org/guides/language/effective-dart/style">dart风格规范</a>的要求，你的IDE通常就会允许你来规范化你的代码风格。
 ##11. 指引你到其他社区社区寻求dart相关问题帮助的解释部分
-在dart语言的官网上的Community and Support，可以找到很多帮助。除此之外，CDSN,ITeye,脚本之家，开源中国社区也有很多关于dart的专业帮助。
+在**dart**语言的官网上的**Community** 
+##Community and Support，可以找到很多帮助。除此之外，**CDSN**,**ITeye**,**脚本之家**，**开源中国社区**也有很多关于**dart**的专业帮助。
 
 ##12. 从web storm软件菜单找出webstrom 中dart开发的帮助文档
-打开webstorm，直接按f1，然后搜索dart，可以找到很多dart的开发知识。
+打开**webstorm**，直接按f1，然后搜索**dart**，可以找到很多**dart**的开发知识。
+###dart support
 https://www.jetbrains.com/help/webstorm/2016.2/dart-support.html?search=dart
 https://www.jetbrains.com/help/webstorm/2016.2/dart.html?search=dart
 https://www.jetbrains.com/help/webstorm/2016.2/testing-dart.html?search=dart
